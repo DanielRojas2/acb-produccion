@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+
+<html class="h-full bg-neutral-950" lang="es"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Cards Participantes</title>
+<!-- Tailwind CSS CDN with plugins -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<!-- Google Fonts: Cinzel and Montserrat -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600;700;800;900&amp;family=Montserrat:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind Config -->
+<script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            serif: ['Cinzel', 'serif'],
+            sans: ['Montserrat', 'sans-serif'],
+          },
+          colors: {
+            gold: {
+              300: '#fde68a',
+              400: '#fbbf24',
+              500: '#d4af37',
+              600: '#b89025',
+              700: '#927018',
+            }
+          }
+        }
+      }
+    }
+  </script>
+<!-- Custom Styles: Gold Frame Corners and Effects -->
+<style data-purpose="card-accents">
+    .corner-bracket {
+      position: absolute;
+      width: 18px;
+      height: 18px;
+      border-color: #d4af37;
+      pointer-events: none;
+      z-index: 25;
+      transition: all 0.3s ease;
+    }
+    .corner-tl {
+      top: 14px;
+      left: 14px;
+      border-top-width: 2px;
+      border-left-width: 2px;
+    }
+    .corner-tr {
+      top: 14px;
+      right: 14px;
+      border-top-width: 2px;
+      border-right-width: 2px;
+    }
+    .corner-bl {
+      bottom: 14px;
+      left: 14px;
+      border-bottom-width: 2px;
+      border-left-width: 2px;
+    }
+    .corner-br {
+      bottom: 14px;
+      right: 14px;
+      border-bottom-width: 2px;
+      border-right-width: 2px;
+    }
+    .group:hover .corner-bracket {
+      border-color: #fde68a;
+      filter: drop-shadow(0 0 4px rgba(212, 175, 55, 0.6));
+    }
+    .gold-gradient-text {
+      background: linear-gradient(135deg, #FFF8DC 0%, #F5D061 40%, #D4AF37 75%, #AA7C11 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+    .bandera-bolivia {
+      max-height: 0.7rem;
+    }
+  </style>
+</head>
+<body class="min-h-screen flex flex-col items-center justify-start p-4 sm:p-6 md:p-10 lg:p-12 antialiased text-white font-sans">
+
+<!-- BEGIN: ContestantsGrid -->
+<main class="w-full max-w-7xl mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-5 md:gap-6 justify-items-center relative z-10" data-purpose="desktop-showcase-grid">
+  <!-- Tarjeta 1: VALENTINA -->
+  <article class="relative w-full max-w-[270px] xl:max-w-[245px] aspect-[3/4.6] rounded-2xl overflow-hidden shadow-2xl bg-gradient-to-b from-stone-900/90 via-[#120f0c] to-black transition-all duration-300 hover:shadow-gold-500/20 hover:-translate-y-1 flex flex-col justify-between p-3 group" data-purpose="musician-score-card">
+    <!-- Remates angulares dorados -->
+    <div class="corner-bracket corner-tl"></div>
+    <div class="corner-bracket corner-tr"></div>
+    <div class="corner-bracket corner-bl"></div>
+    <div class="corner-bracket corner-br"></div>
+    <img class="absolute inset-0 w-full h-full object-cover z-0" src="participante/ale_villarreal.webp" alt="Ale Villarreal">
+    <div aria-hidden="true" class="absolute inset-0 bg-gradient-to-b from-stone-900/55 via-[#15120e]/55 to-black/95 z-[1] pointer-events-none"></div>
+    <div aria-hidden="true" class="absolute inset-0 opacity-15 bg-[radial-gradient(#d4af37_1px,transparent_1px)] [background-size:16px_16px] z-[2] pointer-events-none"></div>
+    <!-- Header con Categoría -->
+    <header class="relative z-10 px-4 pt-4 flex flex-col gap-2" data-purpose="card-top-category">
+      <div class="flex items-center justify-between">
+        <span class="text-[12px] tracking-[0.2em] uppercase font-bold text-gold-400/90 drop-shadow-md">
+          N° 1
+        </span>
+        <img class="w-3.5 h-3.5 object-cover" src="banderas_bolivia/lapaz.png" alt="Bandera de La Paz">
+      </div>
+      <div class="w-full h-px bg-gradient-to-r from-transparent via-gold-500/40 to-transparent"></div>
+    </header>
+    <!-- Parte baja: Calificación sobre el Nombre -->
+    <div class="relative z-10 px-3 pb-4 mt-auto flex flex-col items-center text-center" data-purpose="artist-info-and-score">
+      <div class="flex items-baseline gap-1 mb-1">
+        <span class="font-serif text-4xl sm:text-5xl font-extrabold tracking-tight gold-gradient-text drop-shadow-[0_2px_12px_rgba(212,175,55,0.45)]">85.5</span>
+        <span class="text-[11px] font-semibold text-yellow-200/50 uppercase tracking-wider">/100</span>
+      </div>
+      <div aria-hidden="true" class="w-8 h-0.5 bg-gold-500/50 rounded-full mb-2"></div>
+      <h2 class="font-serif text-xl font-bold tracking-widest text-amber-50 uppercase drop-shadow-md line-clamp-1">
+        VALENTINA
+      </h2>
+      <span class="flex bandera-bolivia justify-items-center">
+        La Paz
+      </span>
+    </div>
+  </article>
+  <!-- Tarjeta 2: Paulina -->
+  <article class="relative w-full max-w-[270px] xl:max-w-[245px] aspect-[3/4.6] rounded-2xl overflow-hidden shadow-2xl bg-gradient-to-b from-stone-900/90 via-[#120f0c] to-black transition-all duration-300 hover:shadow-gold-500/20 hover:-translate-y-1 flex flex-col justify-between p-3 group" data-purpose="musician-score-card">
+    <!-- Remates angulares dorados -->
+    <div class="corner-bracket corner-tl"></div>
+    <div class="corner-bracket corner-tr"></div>
+    <div class="corner-bracket corner-bl"></div>
+    <div class="corner-bracket corner-br"></div>
+    <img class="absolute inset-0 w-full h-full object-cover z-0" src="participante/ale_villarreal.webp" alt="Ale Villarreal">
+    <div aria-hidden="true" class="absolute inset-0 bg-gradient-to-b from-stone-900/55 via-[#15120e]/55 to-black/95 z-[1] pointer-events-none"></div>
+    <div aria-hidden="true" class="absolute inset-0 opacity-15 bg-[radial-gradient(#d4af37_1px,transparent_1px)] [background-size:16px_16px] z-[2] pointer-events-none"></div>
+    <!-- Header con Categoría -->
+    <header class="relative z-10 px-4 pt-4 flex flex-col gap-2" data-purpose="card-top-category">
+      <div class="flex items-center justify-between">
+        <span class="text-[12px] tracking-[0.2em] uppercase font-bold text-gold-400/90 drop-shadow-md">
+          N° 2
+        </span>
+        <img class="w-3.5 h-3.5 object-cover" src="banderas_bolivia/oruro.png" alt="Bandera de La Paz">
+      </div>
+      <div class="w-full h-px bg-gradient-to-r from-transparent via-gold-500/40 to-transparent"></div>
+    </header>
+    <!-- Parte baja: Calificación sobre el Nombre -->
+    <div class="relative z-10 px-3 pb-4 mt-auto flex flex-col items-center text-center" data-purpose="artist-info-and-score">
+      <div class="flex items-baseline gap-1 mb-1">
+        <span class="font-serif text-4xl sm:text-5xl font-extrabold tracking-tight gold-gradient-text drop-shadow-[0_2px_12px_rgba(212,175,55,0.45)]">N/C</span>
+        <span class="text-[11px] font-semibold text-yellow-200/50 uppercase tracking-wider">/100</span>
+      </div>
+      <div aria-hidden="true" class="w-8 h-0.5 bg-gold-500/50 rounded-full mb-2"></div>
+      <h2 class="font-serif text-xl font-bold tracking-widest text-amber-50 uppercase drop-shadow-md line-clamp-1">
+        Paulina 
+      </h2>
+      <span class="flex bandera-bolivia justify-items-center">
+        Oruro
+      </span>
+    </div>
+  </article>
+</main>
+<!-- END: ContestantsGrid -->
+</body></html>

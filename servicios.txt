@@ -1,0 +1,21 @@
+# 1. Base de Datos (Podman)
+podman start acb_mysql acb_phpmyadmin
+
+# 2. Servidor Web Laravel (Escuchando en toda la red local en el puerto 8000)
+php artisan serve --host=0.0.0.0 --port=8000
+
+# 3. Servidor WebSocket Reverb (Escuchando en toda la red local en el puerto 6080)
+php artisan reverb:start --host=0.0.0.0 --port=6080
+
+# 4. Frontend Vite
+# Modo Producción (Assets precompilados, recomendado):
+npm run build
+# O modo desarrollo con HMR para red local:
+npm run dev -- --host=0.0.0.0
+
+# URLs de Acceso desde la Red Local:
+# - Panel Web: http://192.168.200.232:8000
+# - WebSocket Reverb: ws://192.168.200.232:6080
+
+
+php artisan festival:reset-presentaciones
